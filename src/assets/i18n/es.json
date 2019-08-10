@@ -1,0 +1,18 @@
+{
+  "TITLE": "Hola señor",
+  "TITLE_2": "Hola {{value}}",
+  "description": "Ooohh .... acabas de traducir este texto?",
+  "data": {
+    "name": "Me llamo {{name_value}}"
+  },
+  "HOME": {
+    "title": "ES Home",
+    "greeting": "ES Hey {{name}}: Welcome",
+    "withcode": "<br><br>ES  you are <b>epic</b>!",
+    "btn": "ES show alert"
+  },
+  "ALERT": {
+    "header": "ES Error",
+    "msg": "ES There was a problem with your operation"
+  }
+}

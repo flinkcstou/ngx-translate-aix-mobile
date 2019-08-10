@@ -1,0 +1,18 @@
+{
+  "TITLE": "Bonjour Monsieur",
+  "TITLE_2": "Bonjour {{value}}",
+  "description": "Ooohh .... vous venez de traduire ce texte?",
+  "data": {
+    "name": "je m'appelle {{name_value}}"
+  },
+  "HOME": {
+    "title": "FRANCE",
+    "greeting": "FRANCE {{name}}: Welcome",
+    "withcode": "<br><br>FRANCE you are <b>epic</b>!",
+    "btn": "FRANCE show alert"
+  },
+  "ALERT": {
+    "header": "FRANCE Error",
+    "msg": "FRANCE There was a problem with your operation"
+  }
+}
