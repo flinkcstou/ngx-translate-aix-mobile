@@ -1,18 +1,4 @@
 {
-  "TITLE": "Hello sir",
-  "TITLE_2": "Hello {{value}}",
-  "description": "Ooohh .... did you just translate this text ?",
-  "data": {
-    "name": "My name is {{name_value}}"
-  },
-  "HOME": {
-    "title": "Home",
-    "greeting": "Hey {{name}}: Welcome",
-    "withcode": "<br><br> you are <b>epic</b>!",
-    "btn": "show alert"
-  },
-  "ALERT": {
-    "header": "Error",
-    "msg": "There was a problem with your operation"
-  }
+  "TITLE_1": "title first",
+  "TITLE_2": "title second"
 }

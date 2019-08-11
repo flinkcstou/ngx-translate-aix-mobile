@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule, Storage } from '@ionic/storage';
 import { LanguagePopOverPageModule } from './pages/language-pop-over/language-pop-over.module';
 import { LanguagePopOverPage } from './pages/language-pop-over/language-pop-over.page';
+import { CachesTranslateHttpLoader } from './services/CachesTranslateHttpLoader';
+import { HttpService } from './services/http.service';
+import { LanguageService } from './services/language.service';
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+export function createTranslateLoader(languageService: LanguageService, httpClient: HttpClient, http: HttpService, storage: Storage) {
+  return new CachesTranslateHttpLoader(languageService, httpClient, http, storage);
 }
 
 @NgModule({
@@ -33,7 +35,7 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [HttpClient]
+        deps: [LanguageService, HttpClient, HttpService, Storage]
       }
     })
   ],

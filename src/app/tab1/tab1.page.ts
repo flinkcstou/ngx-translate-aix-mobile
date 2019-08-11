@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AlertController, PopoverController } from '@ionic/angular';
+import { PopoverController } from '@ionic/angular';
 import { LanguagePopOverPage } from '../pages/language-pop-over/language-pop-over.page';
-import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-tab1',
@@ -10,13 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class Tab1Page {
 
-  params = {
-    name: 'nazar'
-  };
-
-  constructor(private popoverCtrl: PopoverController,
-              private alertCtrl: AlertController,
-              private translate: TranslateService,
+  constructor(private popoverCtrl: PopoverController
   ) {
   }
 
@@ -26,15 +20,6 @@ export class Tab1Page {
       event: ev,
     });
     await popover.present();
-  }
-
-  async showAlert() {
-    const alert = await this.alertCtrl.create({
-      header: this.translate.instant('ALERT.header'),
-      message: this.translate.instant('ALERT.msg'),
-      buttons: ['OK']
-    });
-    alert.present();
   }
 
 }

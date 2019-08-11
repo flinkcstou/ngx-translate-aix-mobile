@@ -1,18 +1,4 @@
 {
-  "TITLE": "Bonjour Monsieur",
-  "TITLE_2": "Bonjour {{value}}",
-  "description": "Ooohh .... vous venez de traduire ce texte?",
-  "data": {
-    "name": "je m'appelle {{name_value}}"
-  },
-  "HOME": {
-    "title": "RU",
-    "greeting": "RU {{name}}: Welcome",
-    "withcode": "<br><br>RU you are <b>epic</b>!",
-    "btn": "RU show alert"
-  },
-  "ALERT": {
-    "header": "RU Error",
-    "msg": "RU There was a problem with your operation"
-  }
+  "TITLE_1": "первый титул",
+  "TITLE_2": "второй титул"
 }
