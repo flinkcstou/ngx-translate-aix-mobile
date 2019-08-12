@@ -22,8 +22,15 @@ export class LanguagePopOverPage implements OnInit {
     this.selected = this.languageService.selected;
   }
 
-  select(lng: string) {
-    this.languageService.setLanguage(lng);
+  async select(languageCode: string) {
+    const languageVersion = this.languageService.getLanguageVersion(languageCode);
+    const languageVersionCheck = this.languageService.checkLanguage(languageCode, languageVersion);
+    if (languageVersionCheck) {
+      await this.languageService.updateLanguageFromLanguageCode(languageCode);
+      this.languageService.updateLanguageFromNgxTranslate(languageCode);
+    }
+
+    this.languageService.setLanguage(languageCode);
     this.popoverCtrl.dismiss();
   }
 

@@ -15,10 +15,11 @@ import { LanguagePopOverPageModule } from './pages/language-pop-over/language-po
 import { LanguagePopOverPage } from './pages/language-pop-over/language-pop-over.page';
 import { CachesTranslateHttpLoader } from './services/CachesTranslateHttpLoader';
 import { HttpService } from './services/http.service';
-import { LanguageService } from './services/language.service';
+import { LegacyService } from './services/legacy.service';
+import { NgxLanguageService } from './services/ngx-language.service';
 
-export function createTranslateLoader(languageService: LanguageService, httpClient: HttpClient, http: HttpService, storage: Storage) {
-  return new CachesTranslateHttpLoader(languageService, httpClient, http, storage);
+export function createTranslateLoader(ngxLanguageService: NgxLanguageService, httpClient: HttpClient, http: HttpService) {
+  return new CachesTranslateHttpLoader(ngxLanguageService, httpClient, http);
 }
 
 @NgModule({
@@ -35,7 +36,7 @@ export function createTranslateLoader(languageService: LanguageService, httpClie
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [LanguageService, HttpClient, HttpService, Storage]
+        deps: [NgxLanguageService, HttpClient, HttpService, Storage]
       }
     })
   ],
