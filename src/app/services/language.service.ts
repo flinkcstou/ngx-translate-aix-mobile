@@ -70,6 +70,16 @@ export class LanguageService {
     await this.initLanguageFromNgx();
   }
 
+  async setBeforeInitalApplanguage() {
+    const language = this.storage.get(LANGUAGE_CODE).then(value => {
+      if (value) {
+        this.translate.setDefaultLang(value);
+      } else {
+        this.translate.setDefaultLang(DEFAULT_LANGUAGE_CODE);
+      }
+    });
+  }
+
   async initFirstDefaultLanguageFromCache() {
     let languageCode = await this.getLanguageCode();
     if (languageCode) {

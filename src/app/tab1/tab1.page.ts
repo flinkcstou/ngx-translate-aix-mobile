@@ -22,4 +22,13 @@ export class Tab1Page {
     await popover.present();
   }
 
+  /*async showAlert() {
+    const alert = await this.alertCtrl.create({
+      header: this.translate.instant('ALERT.header'),
+      message: this.translate.instant('ALERT.msg'),
+      buttons: ['OK']
+    });
+    alert.present();
+  }*/
+
 }

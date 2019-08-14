@@ -10,12 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { IonicStorageModule, Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 import { LanguagePopOverPageModule } from './pages/language-pop-over/language-pop-over.module';
 import { LanguagePopOverPage } from './pages/language-pop-over/language-pop-over.page';
 import { CachesTranslateHttpLoader } from './services/CachesTranslateHttpLoader';
 import { HttpService } from './services/http.service';
-import { LegacyService } from './services/legacy.service';
 import { NgxLanguageService } from './services/ngx-language.service';
 
 export function createTranslateLoader(ngxLanguageService: NgxLanguageService, httpClient: HttpClient, http: HttpService) {
@@ -36,7 +35,7 @@ export function createTranslateLoader(ngxLanguageService: NgxLanguageService, ht
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [NgxLanguageService, HttpClient, HttpService, Storage]
+        deps: [NgxLanguageService, HttpClient, HttpService]
       }
     })
   ],
